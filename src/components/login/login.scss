@@ -1,0 +1,101 @@
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .container {
+    background-color: white;
+    height: 80%;
+    width: 60%;
+    margin-top: 12%;
+    border-radius: 20px;
+
+    img {
+      width: 17%;
+    }
+
+    .container-content {
+      display: flex;
+      justify-content: space-between;
+      margin: 1rem 4rem;
+
+      .description {
+        text-align: start;
+        width: 45%;
+        border-right: 1px solid rgb(225, 225, 225);
+        padding-right: 5%;
+        font-size: 1.1rem;
+        font-weight: 500;
+      }
+
+      .sign-up {
+        width: 45%;
+        text-align: start;
+
+        input {
+          all: unset;
+          display: block;
+          margin: 1rem 1rem 1rem 0;
+          background-color: rgb(241, 241, 241);
+          border: none;
+          padding: 0.3rem;
+          width: 80%;
+          border-radius: 7px;
+        }
+
+        button {
+          all: unset;
+          margin: 0.5rem 0;
+          display: block;
+          padding: 0.2rem;
+          border-radius: 7px;
+          color: white;
+          font-size: 1rem;
+          font-weight: 600;
+          padding-left: 0.5rem;
+          padding-right: 0.5rem;
+        }
+
+        button:hover {
+          cursor: pointer;
+        }
+
+        h3 {
+          margin: 0.5rem 0;
+          font-size: 1.4rem;
+        }
+
+        .register-user {
+          button {
+            background-color: #96d1c5;
+          }
+          h3 {
+            color: #96d1c5;
+          }
+        }
+
+        .login-user {
+          button {
+            background-color: #f8aeb0;
+          }
+          h3 {
+            color: #f8aeb0;
+          }
+
+          .signin-google {
+            margin-top: 1rem;
+            background-color: #fff;
+            border: 3px solid #f8aeb0;
+            color: #f8aeb0;
+            width: 80%;
+            text-align: center;
+            i {
+              color: #f8aeb0;
+              margin-right: 0.2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

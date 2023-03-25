@@ -1,0 +1,154 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+
+  img:first-child {
+    width: 15%;
+    position: fixed;
+    left: 0;
+  }
+  img:nth-of-type(2) {
+    width: 10rem;
+    margin-top: 1%;
+    margin-bottom: 6%;
+    top: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  button {
+    all: unset;
+    display: block;
+    padding: 0.2rem;
+    border-radius: 20px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+    background-color: #96d1c5;
+    margin-right: 4%;
+    margin-top: 2rem;
+    width: 5rem;
+    top: 0;
+    right: 0;
+    position: absolute;
+  }
+  button:hover {
+    cursor: pointer;
+  }
+}
+
+.main-form {
+  display: flex;
+  justify-content: space-between;
+  form {
+    display: flex;
+    justify-content: center;
+    top: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 10rem;
+    background-color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+
+    input {
+      all: unset;
+      display: inline;
+      text-align: left;
+      margin: 1rem 1rem 1rem 0;
+      background-color: rgb(241, 241, 241);
+      padding: 0.3rem;
+      padding-left: 1rem;
+      border-radius: 7px;
+      margin-bottom: 1rem;
+      width: 50%;
+    }
+
+    button {
+      all: unset;
+      display: block;
+      padding: 0.2rem;
+      border-radius: 20px;
+      color: white;
+      font-size: 1rem;
+      font-weight: 600;
+      background-color: #f37779;
+      margin: auto;
+      width: 5rem;
+    }
+
+    button:hover {
+      cursor: pointer;
+    }
+  }
+  img {
+    width: 15%;
+    bottom: 0;
+    transform: translateX(-50%);
+    transform: rotate(180deg);
+    position: fixed;
+    right: 0;
+  }
+}
+
+.edit-inventory {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  margin-top: 1rem;
+  background-color: #fff;
+  width: 70%;
+  padding: 0.3rem 0;
+  font-size: 1.1rem;
+  border-radius: 20px;
+
+  .edit-inventory-inputs {
+    display: inline;
+    width: 60%;
+    input {
+      all: unset;
+      display: inline;
+      text-align: left;
+      margin-right: 1rem;
+      background-color: rgb(241, 241, 241);
+      padding: 0.3rem;
+      padding-left: 1rem;
+      border-radius: 7px;
+      width: 40%;
+      height: 1.6rem;
+    }
+  }
+
+  .edit-inventory-btns {
+    margin-right: 2rem;
+    button {
+      all: unset;
+      padding: 0.2rem;
+      border-radius: 20px;
+      color: white;
+      font-size: 1rem;
+      font-weight: 600;
+      background-color: #f37779;
+      margin: auto;
+      width: 4rem;
+    }
+
+    button:hover {
+      cursor: pointer;
+    }
+
+    button:first-child {
+      margin-right: 1rem;
+    }
+  }
+}
+
+.inventory {
+  margin-top: 17rem;
+  margin-bottom: 5rem;
+}
