@@ -3,8 +3,6 @@ import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const app = initializeApp({
-  //   apiKey: "AIzaSyCUxOU-JgclfDmmRpisoiZZ6scAsJ3q6Xk",
-  //   authDomain: "lafih-974bb.firebaseapp.com",
   apiKey: `${process.env.REACT_APP_API_KEY}`,
   authDomain: `${process.env.REACT_APP_AUTH_DOMAIN}`,
   projectId: "lafih-974bb",

@@ -1,9 +1,10 @@
 import "./home.scss";
 import Inventory from "../inventory/inventory.jsx";
-import Edit from "../edit-inventory/edit-inventory.jsx";
 import homeLogo from "../../images/home-logo.png";
 import cornerImg from "../../images/corner.png";
 import { useState, useEffect, Fragment } from "react";
+import { useNavigate } from "react-router-dom";
+
 import {
   addDoc,
   collection,
@@ -12,7 +13,10 @@ import {
   setDoc,
   doc,
 } from "firebase/firestore";
-import { db } from "../firebase/firebase-config.js";
+
+import { signOut } from "firebase/auth";
+import { db, auth } from "../firebase/firebase-config.js";
+
 const Home = () => {
   const [inventory, setInventory] = useState([]);
   const inventoryCollectionRef = collection(db, "inventory");
@@ -46,7 +50,6 @@ const Home = () => {
     } else {
       await addDoc(inventoryCollectionRef, {
         location: newLocation,
-
         item: newItem,
       });
       const data = await getDocs(inventoryCollectionRef);
@@ -66,6 +69,7 @@ const Home = () => {
   const handleEdit = (inventory) => {
     setIsEditing(true);
     setEditLocation(inventory.location);
+
     setEditItem(inventory.item);
     setEditInventoryId(inventory.id);
   };
@@ -86,12 +90,26 @@ const Home = () => {
       setIsEditing(false);
     }
   };
+  const navigate = useNavigate();
+
+  const logout = async () => {
+    await signOut(auth);
+    localStorage.removeItem("authState");
+    navigate("/");
+  };
+
+  //   const deleteUser = async (userId) => {
+  //     const userDoc = doc(db, "users", userId);
+  //     await deleteDoc(userDoc);
+  //     navigate("/");
+  //   };
+
   return (
     <div className="home">
       <nav>
         <img src={cornerImg} alt="corner image" />
         <img src={homeLogo} alt="home logo" />
-        <button>Sign Out</button>
+        <button onClick={logout}>Sign Out</button>
       </nav>
 
       <div className="main-form">
@@ -112,6 +130,7 @@ const Home = () => {
               setNewLocation(event.target.value);
             }}
           />
+
           <button type="submit" onClick={createInventory}>
             Add
           </button>

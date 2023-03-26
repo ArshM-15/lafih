@@ -1,11 +1,9 @@
 import "./login.scss";
 import loginLogo from "../../images/login-logo.png";
-
 import { useState, useEffect } from "react";
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
-  signOut,
   signInWithEmailAndPassword,
   signInWithPopup,
 } from "firebase/auth";
@@ -44,7 +42,8 @@ const Login = () => {
     }
   };
 
-  const login = async () => {
+  const login = async (event) => {
+    event.preventDefault();
     try {
       const user = await signInWithEmailAndPassword(
         auth,
@@ -58,7 +57,8 @@ const Login = () => {
     }
   };
 
-  const loginGoogle = async () => {
+  const loginGoogle = async (event) => {
+    event.preventDefault();
     try {
       const result = await signInWithPopup(auth, provider);
       setLoginWithGoogle(result.user.email);
@@ -69,19 +69,15 @@ const Login = () => {
     }
   };
 
-  useEffect(() => {
+  useEffect((event) => {
     const storedEmail = localStorage.getItem("email");
     if (storedEmail) {
+      event.preventDefault();
       setLoginWithGoogle(storedEmail);
     }
   }, []);
 
-  const logout = async () => {
-    await signOut(auth);
-  };
-
   if (user) {
-    console.log("hello");
     return <Navigate to="/home" user={user} setUser={setUser} />;
   }
   return (
@@ -116,13 +112,11 @@ const Login = () => {
                     setRegisterPassword(event.target.value);
                   }}
                 />
-
                 <button type="submit" onClick={register}>
                   Create
                 </button>
               </form>
             </div>
-
             <div className="login-user">
               <form>
                 <h3>Login User</h3>
@@ -140,8 +134,12 @@ const Login = () => {
                 />
                 <button onClick={login}>Login</button>
 
-                <button onClick={loginGoogle} className="signin-google">
-                  <i class="fa fa-google fa-fw"></i>
+                <button
+                  type="submit"
+                  onClick={loginGoogle}
+                  className="signin-google"
+                >
+                  <i className="fa fa-google fa-fw"></i>
                   Sign in with Google
                 </button>
               </form>
