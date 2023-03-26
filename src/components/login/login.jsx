@@ -65,6 +65,7 @@ const Login = () => {
       localStorage.setItem("email", result.user.email);
       setLoggedIn(true);
     } catch (error) {
+      console.log(error);
       alert("Invalid email or password");
     }
   };
