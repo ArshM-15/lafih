@@ -57,19 +57,8 @@ const Login = () => {
     }
   };
 
-  // const loginGoogle = async (event) => {
-  //   event.preventDefault();
-  //   try {
-  //     const result = await signInWithPopup(auth, provider);
-  //     setLoginWithGoogle(result.user.email);
-  //     localStorage.setItem("email", result.user.email);
-  //     setLoggedIn(true);
-  //   } catch (error) {
-  //     alert("Invalid email or password");
-  //   }
-  // };
-
-  const loginGoogle = async () => {
+  const loginGoogle = async (event) => {
+    event.preventDefault();
     try {
       const result = await signInWithPopup(auth, provider);
       setLoginWithGoogle(result.user.email);
@@ -80,10 +69,20 @@ const Login = () => {
     }
   };
 
+  // const loginGoogle = async () => {
+  //   try {
+  //     const result = await signInWithPopup(auth, provider);
+  //     setLoginWithGoogle(result.user.email);
+  //     localStorage.setItem("email", result.user.email);
+  //     setLoggedIn(true);
+  //   } catch (error) {
+  //     alert("Invalid email or password");
+  //   }
+  // };
+
   useEffect((event) => {
     const storedEmail = localStorage.getItem("email");
     if (storedEmail) {
-      event.preventDefault();
       setLoginWithGoogle(storedEmail);
     }
   }, []);
