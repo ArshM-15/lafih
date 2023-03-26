@@ -57,8 +57,19 @@ const Login = () => {
     }
   };
 
-  const loginGoogle = async (event) => {
-    event.preventDefault();
+  // const loginGoogle = async (event) => {
+  //   event.preventDefault();
+  //   try {
+  //     const result = await signInWithPopup(auth, provider);
+  //     setLoginWithGoogle(result.user.email);
+  //     localStorage.setItem("email", result.user.email);
+  //     setLoggedIn(true);
+  //   } catch (error) {
+  //     alert("Invalid email or password");
+  //   }
+  // };
+
+  const loginGoogle = async () => {
     try {
       const result = await signInWithPopup(auth, provider);
       setLoginWithGoogle(result.user.email);
