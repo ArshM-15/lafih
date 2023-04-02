@@ -19,7 +19,6 @@ import { db, auth } from "../firebase/firebase-config.js";
 
 const Home = () => {
   const [inventory, setInventory] = useState([]);
-  // const inventoryCollectionRef = collection(db, "inventory");
 
   const user = auth.currentUser;
   const inventoryCollectionRef = user
@@ -33,27 +32,26 @@ const Home = () => {
   const [editLocation, setEditLocation] = useState("");
   const [editItem, setEditItem] = useState("");
   const [editInventoryId, setEditInventoryId] = useState("");
+  const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   const getInventory = async () => {
-  //     const data = await getDocs(inventoryCollectionRef);
-  //     setInventory(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-  //   };
-
-  //   getInventory();
-  // }, [inventoryCollectionRef]);
-
-  // Retrieve user-specific todos
   useEffect(() => {
-    const getInventory = async () => {
-      if (inventoryCollectionRef) {
-        const data = await getDocs(inventoryCollectionRef);
-        setInventory(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        const inventoryCollectionRef = collection(
+          db,
+          `users/${user.uid}/inventory`
+        );
+        const getInventory = async () => {
+          const data = await getDocs(inventoryCollectionRef);
+          setInventory(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+        };
+        getInventory();
+      } else {
+        navigate("/");
       }
-    };
-
-    getInventory();
-  }, [inventoryCollectionRef]);
+    });
+    return unsubscribe;
+  }, [navigate]);
 
   const createInventory = async (event) => {
     event.preventDefault();
@@ -72,8 +70,8 @@ const Home = () => {
       const data = await getDocs(inventoryCollectionRef);
       setInventory(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     }
-    // setNewLocation("");
-    // setNewItem("");
+    setNewLocation("");
+    setNewItem("");
   };
 
   const deleteInventory = async (id) => {
@@ -112,8 +110,6 @@ const Home = () => {
       setEditInventoryId("");
     }
   };
-
-  const navigate = useNavigate();
 
   const signout = async () => {
     await signOut(auth);
