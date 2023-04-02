@@ -1,6 +1,8 @@
 import "./login.scss";
 import loginLogo from "../../images/login-logo.png";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
@@ -8,7 +10,7 @@ import {
   signInWithPopup,
 } from "firebase/auth";
 import { auth, provider } from "../firebase/firebase-config.js";
-import { Navigate } from "react-router-dom";
+
 const Login = () => {
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
@@ -16,14 +18,14 @@ const Login = () => {
   const [loginPassword, setLoginPassword] = useState("");
   const [loginWithGoogle, setLoginWithGoogle] = useState("");
   const [loggedIn, setLoggedIn] = useState(false);
-
   const [user, setUser] = useState(null);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
     });
-
     return () => unsubscribe();
   }, []);
 
@@ -70,26 +72,15 @@ const Login = () => {
     }
   };
 
-  // const loginGoogle = async () => {
-  //   try {
-  //     const result = await signInWithPopup(auth, provider);
-  //     setLoginWithGoogle(result.user.email);
-  //     localStorage.setItem("email", result.user.email);
-  //     setLoggedIn(true);
-  //   } catch (error) {
-  //     alert("Invalid email or password");
-  //   }
-  // };
-
-  useEffect((event) => {
+  useEffect(() => {
     const storedEmail = localStorage.getItem("email");
     if (storedEmail) {
       setLoginWithGoogle(storedEmail);
     }
   }, []);
 
-  if (user) {
-    return <Navigate to="/home" user={user} setUser={setUser} />;
+  if (loggedIn || user) {
+    return <Navigate to={`/home/${user.uid}`} user={user} setUser={setUser} />;
   }
   return (
     <div className="login">
