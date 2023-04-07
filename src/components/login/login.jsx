@@ -103,12 +103,14 @@ const Login = () => {
               <form>
                 <h3>Create User</h3>
                 <input
+                  maxLength="40"
                   placeholder="Email..."
                   onChange={(event) => {
                     setRegisterEmail(event.target.value);
                   }}
                 />
                 <input
+                  maxLength="40"
                   placeholder="Password..."
                   onChange={(event) => {
                     setRegisterPassword(event.target.value);
@@ -123,12 +125,14 @@ const Login = () => {
               <form>
                 <h3>Login User</h3>
                 <input
+                  maxLength="40"
                   placeholder="Email..."
                   onChange={(event) => {
                     setLoginEmail(event.target.value);
                   }}
                 />
                 <input
+                  maxLength="40"
                   placeholder="Password..."
                   onChange={(event) => {
                     setLoginPassword(event.target.value);

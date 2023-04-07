@@ -7,17 +7,46 @@
     background-color: white;
     height: 80%;
     width: 60%;
-    margin-top: 12%;
     border-radius: 20px;
+    margin-top: 10%;
+
+    @media (max-width: 977px) {
+      margin-top: 1%;
+    }
+
+    @media (max-width: 700px) {
+      width: 78%;
+    }
+
+    @media (max-width: 500px) {
+      width: 90%;
+    }
 
     img {
       width: 17%;
+      margin-top: 1rem;
+
+      @media (max-width: 977px) {
+        width: 25%;
+      }
+
+      @media (max-width: 700px) {
+        width: 30%;
+      }
+
+      @media (max-width: 500px) {
+        width: 35%;
+      }
     }
 
     .container-content {
       display: flex;
       justify-content: space-between;
-      margin: 1rem 4rem;
+      margin: 1rem 2rem;
+
+      @media (max-width: 977px) {
+        display: block;
+      }
 
       .description {
         text-align: start;
@@ -26,21 +55,43 @@
         padding-right: 5%;
         font-size: 1.1rem;
         font-weight: 500;
+
+        @media (max-width: 977px) {
+          border: none;
+          width: 90%;
+          margin: auto;
+          padding-bottom: 1rem;
+          text-align: center;
+          border-bottom: 1px solid rgb(225, 225, 225);
+        }
+
+        @media (max-width: 977px) {
+          width: 95%;
+        }
       }
 
       .sign-up {
         width: 45%;
         text-align: start;
+        margin-top: 1rem;
+
+        @media (max-width: 977px) {
+          width: 90%;
+        }
 
         input {
           all: unset;
           display: block;
-          margin: 1rem 1rem 1rem 0;
+          margin: 1rem 0;
           background-color: rgb(241, 241, 241);
           border: none;
           padding: 0.3rem;
           width: 80%;
           border-radius: 7px;
+
+          @media (max-width: 977px) {
+            width: 80%;
+          }
         }
 
         button {
@@ -92,6 +143,10 @@
             i {
               color: #f8aeb0;
               margin-right: 0.2rem;
+            }
+
+            @media (max-width: 977px) {
+              display: block;
             }
           }
         }
