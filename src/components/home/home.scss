@@ -6,6 +6,9 @@ nav {
     width: 15%;
     position: fixed;
     left: 0;
+    @media (max-width: 900px) {
+      width: 20%;
+    }
   }
   img:nth-of-type(2) {
     width: 10rem;
@@ -15,6 +18,16 @@ nav {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+
+    @media (max-width: 735px) {
+      width: 9rem;
+    }
+
+    @media (max-width: 525px) {
+      width: 8rem;
+      margin-top: 3%;
+      left: 45%;
+    }
   }
 
   button {
@@ -34,6 +47,14 @@ nav {
     top: 0;
     right: 0;
     position: absolute;
+
+    @media (max-width: 525px) {
+      width: 15%;
+    }
+
+    @media (max-width: 480px) {
+      width: 20%;
+    }
   }
   button:hover {
     cursor: pointer;
@@ -44,8 +65,8 @@ nav {
   display: flex;
   justify-content: space-between;
   form {
-    display: flex;
-    justify-content: center;
+    // display: flex;
+    justify-content: space-between;
     top: 0;
     position: absolute;
     left: 50%;
@@ -54,6 +75,25 @@ nav {
     background-color: #fff;
     padding: 0.5rem 1rem;
     border-radius: 10px;
+    width: 40%;
+
+    @media (max-width: 1333px) {
+      padding-bottom: 1rem;
+    }
+
+    @media (max-width: 919px) {
+      width: 50%;
+      padding-bottom: 1rem;
+    }
+
+    @media (max-width: 735px) {
+      width: 70%;
+      padding-bottom: 1rem;
+    }
+
+    @media (max-width: 525px) {
+      padding-bottom: 1rem;
+    }
 
     input {
       all: unset;
@@ -65,12 +105,27 @@ nav {
       padding-left: 1rem;
       border-radius: 7px;
       margin-bottom: 1rem;
-      width: 50%;
+      width: 35%;
+
+      @media (max-width: 1333px) {
+        width: 40%;
+      }
+
+      @media (max-width: 900px) {
+        display: inline;
+      }
+
+      @media (max-width: 728px) {
+        width: 40%;
+      }
+
+      @media (max-width: 525px) {
+        width: 80%;
+      }
     }
 
     button {
       all: unset;
-      display: block;
       padding: 0.2rem;
       border-radius: 20px;
       color: white;
@@ -79,6 +134,10 @@ nav {
       background-color: #f37779;
       margin: auto;
       width: 5rem;
+
+      @media (max-width: 900px) {
+        display: block;
+      }
     }
 
     button:hover {
@@ -92,6 +151,10 @@ nav {
     transform: rotate(180deg);
     position: fixed;
     right: 0;
+
+    @media (max-width: 900px) {
+      width: 20%;
+    }
   }
 }
 
@@ -149,6 +212,15 @@ nav {
 }
 
 .inventory {
+  margin: auto;
   margin-top: 17rem;
   margin-bottom: 5rem;
+
+  @media (max-width: 1333px) {
+    margin-top: 19rem;
+  }
+
+  @media (max-width: 525px) {
+    margin-top: 23rem;
+  }
 }

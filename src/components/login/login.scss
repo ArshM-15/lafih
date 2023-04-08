@@ -11,15 +11,17 @@
     margin-top: 10%;
 
     @media (max-width: 977px) {
-      margin-top: 1%;
+      margin: 2rem;
     }
 
     @media (max-width: 700px) {
       width: 78%;
+      margin: 2rem;
     }
 
     @media (max-width: 500px) {
       width: 90%;
+      margin: 2rem;
     }
 
     img {
