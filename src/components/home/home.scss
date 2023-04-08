@@ -4,7 +4,7 @@ nav {
 
   img:first-child {
     width: 15%;
-    position: fixed;
+    position: absolute;
     left: 0;
     @media (max-width: 900px) {
       width: 20%;
@@ -149,7 +149,7 @@ nav {
     bottom: 0;
     transform: translateX(-50%);
     transform: rotate(180deg);
-    position: fixed;
+    position: absolute;
     right: 0;
 
     @media (max-width: 900px) {
