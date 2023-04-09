@@ -174,9 +174,17 @@ nav {
   margin-top: 1rem;
   background-color: #fff;
   width: 70%;
-  padding: 0.3rem 0;
+  padding: 0.7rem 0 0.7rem 0.7rem;
   font-size: 1.1rem;
   border-radius: 20px;
+
+  @media (max-width: 875px) {
+    width: 45%;
+  }
+
+  @media (max-width: 600px) {
+    width: 60%;
+  }
 
   .edit-inventory-inputs {
     display: inline;
@@ -192,11 +200,20 @@ nav {
       border-radius: 7px;
       width: 40%;
       height: 1.6rem;
+
+      @media (max-width: 875px) {
+        display: block;
+        margin: 0.5rem;
+        width: 80%;
+      }
     }
   }
 
   .edit-inventory-btns {
-    margin-right: 2rem;
+    margin-right: 1rem;
+    @media (max-width: 875px) {
+      margin-right: 0.2rem;
+    }
     button {
       all: unset;
       padding: 0.2rem;
@@ -207,6 +224,11 @@ nav {
       background-color: #f37779;
       margin: auto;
       width: 4rem;
+
+      @media (max-width: 875px) {
+        display: block;
+        margin: 0.5rem;
+      }
     }
 
     button:hover {
