@@ -127,7 +127,7 @@ const Home = () => {
       <div className="main-form">
         <form>
           <input
-            maxlength="40"
+            maxlength="20"
             placeholder="Enter Item"
             value={newItem}
             onChange={(event) => {
@@ -135,7 +135,7 @@ const Home = () => {
             }}
           />
           <input
-            maxlength="40"
+            maxlength="20"
             placeholder="Enter Location"
             value={newLocation}
             onChange={(event) => {
@@ -157,7 +157,7 @@ const Home = () => {
                   <div className="edit-inventory">
                     <div className="edit-inventory-inputs">
                       <input
-                        maxlength="40"
+                        maxlength="20"
                         placeholder="New Item"
                         value={editItem}
                         onChange={(event) => {
@@ -165,7 +165,7 @@ const Home = () => {
                         }}
                       />
                       <input
-                        maxlength="40"
+                        maxlength="20"
                         placeholder="New Location"
                         value={editLocation}
                         onChange={(event) => {
