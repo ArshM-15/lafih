@@ -1,15 +1,15 @@
 import "./App.css";
-import { Route, Router } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Home from "./components/home/home.jsx";
 import Login from "./components/login/login.jsx";
 
 function App() {
   return (
     <div className="App">
-      <Router>
+      <Routes>
         <Route exact path="/home/:uid" element={<Home />} />
         <Route exact path="/" element={<Login />} />
-      </Router>
+      </Routes>
     </div>
   );
 }
