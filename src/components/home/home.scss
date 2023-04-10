@@ -154,18 +154,6 @@ nav {
       cursor: pointer;
     }
   }
-  img {
-    width: 15%;
-    bottom: 0;
-    transform: translateX(-50%);
-    transform: rotate(180deg);
-    position: absolute;
-    right: 0;
-
-    @media (max-width: 900px) {
-      width: 20%;
-    }
-  }
 }
 
 .edit-inventory {
@@ -245,10 +233,13 @@ nav {
 
 .inventory {
   margin: auto;
-  margin-top: 17rem;
-  margin-bottom: 5rem;
+  margin-top: 5rem;
 
   @media (max-width: 1333px) {
-    margin-top: 19rem;
+    margin-top: 10em;
+  }
+
+  @media (max-width: 600px) {
+    margin-top: 14rem;
   }
 }

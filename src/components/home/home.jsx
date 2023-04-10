@@ -147,9 +147,7 @@ const Home = () => {
             Add
           </button>
         </form>
-        <img src={cornerImg} alt="corner image" />
       </div>
-
       <div className="inventory">
         {inventory.map((inventory) => {
           return (
