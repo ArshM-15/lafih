@@ -5,8 +5,6 @@ import { getFirestore } from "firebase/firestore";
 const app = initializeApp({
   apiKey: `${process.env.REACT_APP_API_KEY}`,
   authDomain: `${process.env.REACT_APP_AUTH_DOMAIN}`,
-  // apiKey: "AIzaSyCUxOU-JgclfDmmRpisoiZZ6scAsJ3q6Xk",
-  // authDomain: "lafih-974bb.firebaseapp.com",
   projectId: "lafih-974bb",
   storageBucket: "lafih-974bb.appspot.com",
   messagingSenderId: "835410521435",
